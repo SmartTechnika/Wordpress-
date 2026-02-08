@@ -17,25 +17,22 @@ Production-ready MVP for a technical services CRM built with Next.js 14, Prisma,
 
 ## Getting Started
 
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
+  ## Installation issues (npm 403)
 
-2. Configure environment variables:
-   ```bash
-   cp .env.example .env
-   ```
+If you encounter `npm install` → `403 Forbidden`:
 
-3. Run Prisma migrations and generate the client:
-   ```bash
-   npm run prisma:migrate
-   ```
+1. Run:
+   npm config set registry https://registry.npmjs.org/
 
-4. Start the development server:
-   ```bash
-   npm run dev
-   ```
+2. Logout and login again:
+   npm logout
+   npm login
+
+3. Ensure there is no `.npmrc` pointing to GitHub registry.
+
+Alternatively, use:
+   pnpm install
+   pnpm dev ```
 
 ## Notes
 - Create the first admin user by inserting directly into the database or using Prisma Studio.
